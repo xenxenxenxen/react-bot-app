@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import './App.css'
 import React from 'react';
 import { Collection } from './Collection';
-import { MyLoader } from './Skeleton';
 const category = [//Список категорий
   { "name": "Всё" },
   { "name": "Пейзажи" },
@@ -57,7 +56,7 @@ function App() {
           placeholder="Поиск по названию" />
       </div>
       <div className="content">
-        {isLoading ? (<MyLoader/>) ://Проверка загрузки
+        {//Проверка загрузки
           (
             collections.filter((obj) => //Вывод карточек фото, удовлевотворяющих поиску
             obj.name.toLowerCase()//Прелбразование к нижнему регистру названия карточек
