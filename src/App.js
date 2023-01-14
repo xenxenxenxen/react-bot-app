@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import React from 'react';
+import './App.css'
+const tg = window.Telegram.WebApp;//Подключаем объект взаимодействия с Telegram
 
 function App() {
+  useEffect(() => {
+    tg.ready();// метод позволяет отследить, когда приложение готово к отображению.
+  }, [])
+  const Close = () => {
+    tg.close()// метод закрывает приложение.
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Первый запуск</h1>
+      <img src='https://thumbs.gfycat.com/SoftOptimalAdeliepenguin-size_restricted.gif' alt='img'></img>
+      <button onClick={Close}>Закрыть</button>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App
